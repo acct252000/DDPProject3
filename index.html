@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Estimate the Expected Circumference of your Orange Tree</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Estimate the Expected Circumference of your Orange Tree">
+  <meta name="author" content="Christine">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Estimate the Expected Circumference of your Orange Tree</h1>
+    <h2>Ensure expected growth</h2>
+    <p>Christine<br/>Data Science Student</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Orange Tree Issues</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Have you ever wondered if your orange trees were growing appopriately in their first approximately 6 years?</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Worry No More</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>R has a built in dataset called Orange that tracks age and circumference of orange trees!</p>
+
+<pre><code class="r">head(Orange)
+</code></pre>
+
+<pre><code>##   Tree  age circumference
+## 1    1  118            30
+## 2    1  484            58
+## 3    1  664            87
+## 4    1 1004           115
+## 5    1 1231           120
+## 6    1 1372           142
+</code></pre>
+
+<h2>If Only Someone Built An App..</h2>
+
+<p>There is now a Shiny App that uses a simple linear model predictions to predict the circumference of your orange tree based on age!</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>How good is the model?</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Judge for yourself.  User assumes all risks of improper model and use.  Application provided for informational purposes only.</p>
+
+<pre><code class="r">orangemodel&lt;-lm(Orange$circumference~Orange$age)
+summary(orangemodel)$coef
+</code></pre>
+
+<pre><code>##               Estimate  Std. Error   t value     Pr(&gt;|t|)
+## (Intercept) 17.3996502 8.622659801  2.017898 5.179267e-02
+## Orange$age   0.1067703 0.008276623 12.900228 1.930596e-14
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Where is this fantastic thing?</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><a href="https://acct252000.shinyapps.io/orangetrees/">https://acct252000.shinyapps.io/orangetrees/</a></p>
+
+<p>Note:  In 5 page requirement, assumed title(first) page counted as 1.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Orange Tree Issues'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Worry No More'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='How good is the model?'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Where is this fantastic thing?'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
